@@ -103,6 +103,9 @@ persist.radio.data_ltd_sys_ind=0
 persist.radio.data_con_rprt=0
 persist.radio.calls.on.ims=0
 
+# Media
+vendor.vidc.enc.disable.pq=true
+
 # NFC
 ro.nfc.port=I2C
 persist.nfc.smartcard.config=SIM1,SIM2,eSE1
