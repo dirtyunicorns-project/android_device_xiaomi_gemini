@@ -134,10 +134,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.panel.sh
 
-# Consumerir
-PRODUCT_PACKAGES += \
-    consumerir.msm8996
-
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
