@@ -87,6 +87,9 @@
         <item>240</item>
         <item>255</item>
     </integer-array>
+    
+    <!-- Whether device has button lights support -->
+    <bool name="config_button_brightness_support">true</bool>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
