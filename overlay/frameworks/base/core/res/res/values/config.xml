@@ -95,9 +95,9 @@
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
          The brightness values must be between 0 and 255 and be non-decreasing.
-         This must be overridden in platform specific overlays -->
+         This must be overridden in platform specific overlays 
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-    </integer-array>
+    </integer-array> -->
 
 <!--     <bool name="config_deviceHasVariableButtonBrightness">true</bool> -->
 
@@ -387,6 +387,9 @@
          Refer to power.h for details.
     -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    
+    <!-- enable doze powersaving mode -->
+    <bool name="config_enableAutoPowerModes">true</bool>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
@@ -472,7 +475,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-     <integer name="config_deviceHardwareKeys">87</integer> 
+     <integer name="config_deviceHardwareKeys">19</integer> 
 
 
     <!-- Control the behavior when the user long presses the home button.
@@ -530,8 +533,8 @@
     <bool name="config_animateScreenLights">true</bool>
 
     <!-- If enabled, capacitive keys will only light up when pressed.
-         Otherwise, the buttons will light up whenever the user interacts with the device -->
-    <bool name="config_buttonLightOnKeypressOnly">true</bool>
+         Otherwise, the buttons will light up whenever the user interacts with the device 
+    <bool name="config_buttonLightOnKeypressOnly">true</bool> -->
 
 
     <!-- True if camera app should be pinned via Pinner Service -->
