@@ -122,9 +122,6 @@ BOARD_HARDWARE_CLASS += \
     $(VENDOR_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
-# CNE and DPM
-BOARD_USES_QCNE := true
-
 # Dex
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
