@@ -203,6 +203,11 @@ PRODUCT_COPY_FILES += \
 # Healthd
 PRODUCT_PACKAGES += \
     chargeonlymode
+    
+# Hexagon neuralnetworks controller
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/hex/libhexagon_nn_controller.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhexagon_nn_controller.so
+
 
 # IMS
 PRODUCT_PACKAGES += \
