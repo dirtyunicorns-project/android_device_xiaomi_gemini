@@ -28,7 +28,7 @@
 import /vendor/etc/init/hw/init.qcom.power.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
-import /vendor/etc/init/hw/init.spectrum.rc
+#import /vendor/etc/init/hw/init.spectrum.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -132,7 +132,6 @@ on post-fs-data
 
     # Create folder for mm-qcamera-daemon
     mkdir /data/misc/camera 0770 camera camera
-    mkdir /data/vendor/camera 0770 camera camera
 
     mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
@@ -205,6 +204,9 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     rm /data/system/perfd/default_values
     chmod 2770 /data/system/perfd
+
+    # Create IOP deamon related dirs
+    mkdir /data/misc/iop 0770 root system
 
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
@@ -638,6 +640,13 @@ service ppd /vendor/bin/mm-pp-dpps
     socket pps stream 0660 system system
     disabled
 
+service tfa-sh /vendor/bin/init.tfa.sh /vendor/etc/silence_short.wav 15 1
+    class main
+    user system
+    group system
+    disabled
+    oneshot
+
 service perfd /vendor/bin/perfd
    class main
    user root
@@ -645,12 +654,11 @@ service perfd /vendor/bin/perfd
    writepid /dev/cpuset/system-background/tasks
    disabled
 
-service tfa-sh /vendor/bin/init.tfa.sh /vendor/etc/silence_short.wav 15 1
+service iop /vendor/bin/iop
     class main
-    user system
-    group system
+    user root
+    group root
     disabled
-    oneshot
 
 on property:sys.post_boot.parsed=1
     start perfd
