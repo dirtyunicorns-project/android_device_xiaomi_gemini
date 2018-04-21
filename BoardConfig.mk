@@ -56,9 +56,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CONFIG := gemini_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/caf_msm8996
-
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-8.x/bin
+#TARGET_KERNEL_SOURCE := kernel/xiaomi/caf_msm8996
+TARGET_KERNEL_SOURCE := kernel/xiaomi/eas_msm8996
+#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-8.x/bin
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
